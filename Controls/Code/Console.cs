@@ -395,7 +395,7 @@ namespace TomShane.Neoforce.Controls {
                // Display visible messages based on the scroll bar values.
                //for (int i = bottomLine - 1; i >= topLine; i--) {
                for (int i = bottomIndex; linesWritten < linesToWrite; i--) {
-                  if (i < 0 || i > messages.Count) break;//mentre si fa il resize potrebbe capitare, cmq c'è qualcosa che non va, da capire
+                  if (i < 0 || i >= messages.Count) break;//mentre si fa il resize potrebbe capitare, cmq c'è qualcosa che non va, da capire
                   ConsoleMessage message = messages[i];
                   string msg = FormatMessage(message);
 
