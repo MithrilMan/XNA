@@ -2074,13 +2074,13 @@ namespace TomShane.Neoforce.Controls {
             doubleClickTimer = (long)ts.TotalMilliseconds;
             doubleClickButton = ex.Button;
 
-            if (!Suspended) OnClick(e);
+            if (!Suspended) OnClick(TransformPosition(ex));
 
 
          }
          else if (timer - doubleClickTimer <= Manager.DoubleClickTime && (ex.Button == doubleClickButton && ex.Button != MouseButton.None)) {
             doubleClickTimer = 0;
-            if (!Suspended) OnDoubleClick(e);
+            if (!Suspended) OnDoubleClick(TransformPosition(ex));
          }
          else {
             doubleClickButton = MouseButton.None;
