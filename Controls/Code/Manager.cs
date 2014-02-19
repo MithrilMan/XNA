@@ -521,11 +521,6 @@ namespace TomShane.Neoforce.Controls {
       public event DeviceEventHandler DeviceSettingsChanged;
 
       /// <summary>
-      /// Occurs when the RenderTarget is changed.
-      /// </summary>
-      public event EventHandler RenderTargetChanged;
-
-      /// <summary>
       /// Occurs when the skin is about to change.
       /// </summary>
       public event SkinEventHandler SkinChanging;
