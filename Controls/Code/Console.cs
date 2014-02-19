@@ -133,7 +133,7 @@ namespace TomShane.Neoforce.Controls {
       None = 0x00,
       ChannelName = 0x01,
       TimeStamp = 0x02,
-      Sender = 0x03,
+      Sender = 0x04,
       All = Sender | ChannelName | TimeStamp
    }
 
@@ -628,6 +628,11 @@ namespace TomShane.Neoforce.Controls {
          // Prefix message with message timestamp?
          if ((messageFormat & ConsoleMessageFormats.TimeStamp) == ConsoleMessageFormats.TimeStamp) {
             prefix = string.Format("[{0}]", message.Time.ToLongTimeString()) + prefix;
+         }
+
+         // Prefix message with message timestamp?
+         if ((messageFormat & ConsoleMessageFormats.Sender) == ConsoleMessageFormats.Sender) {
+            prefix = string.Format("[{0}]", message.Sender) + prefix;
          }
 
          if (prefix != "") text = prefix + ": " + text;
